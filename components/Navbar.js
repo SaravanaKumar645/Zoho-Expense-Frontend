@@ -32,7 +32,10 @@ export default function Navbar() {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleCloseMenu = () => {
+    setAnchorEl(null);
+  };
+  const handleLogout = () => {
     signout(() => {
       router.push("/");
     });
@@ -45,7 +48,9 @@ export default function Navbar() {
   const admins = () => {
     return (
       <div>
-        <h2>Admin View</h2>
+        <h4>
+          Admin View <i class="fas fa-angle-down"></i>
+        </h4>
         <ul className={classes.ul}>
           <li>
             <i class="fas fa-suitcase-rolling"></i>
@@ -113,60 +118,102 @@ export default function Navbar() {
         style={{ position: "fixed", top: "0", left: "0", right: "0" }}
       >
         <div className={classes.icon}>
-          <span className="fas fa-scroll"></span> Codingmart Expenses
+          <img src="/zoho-expense1.png" className={classes.logo}></img>
+          <p className={classes.logoText}>Expense</p>
         </div>
         <div className={classes.search_box}>
+          <img src="/search-icon.png" className={classes.searchIcon}></img>
           <input
             className={classes.search_input}
             type="search"
-            placeholder="Search here"
-          />
-          <span className="fa fa-search"></span>
+            placeholder="Search Expenses"
+          ></input>
         </div>
-        <ol>
+        <ol className={classes.ol}>
+          <li style={{ paddingRight: "20px" }}>
+            <a href="#">
+              <p
+                style={{
+                  fontSize: "10pt",
+                  display: "flex",
+                  color: "#878ba2",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  fontWeight: "500",
+                }}
+              >
+                <span>
+                  <i
+                    className="fas fa-rocket"
+                    style={{ color: "#de903e", marginRight: "5px" }}
+                  ></i>
+                </span>
+                Trial Expires in 11 day.
+                <span
+                  style={{
+                    color: "#e89d4e",
+                    fontSize: "9pt",
+                    fontWeight: "600",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  &nbsp;UPGRADE NOW
+                </span>
+              </p>
+            </a>
+          </li>
+          <li className={classes.navIconList}>
+            <a href="#">
+              <i
+                class="fas fa-plus"
+                style={{
+                  color: "rgba(255, 255, 255, 0.925)",
+                  padding: "5px",
+                  width: "28px",
+                  borderRadius: "3px",
+                  backgroundColor: "#22b378",
+                  fontWeight: "600",
+                }}
+              ></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-cog" style={{ color: "#878ba2" }}></i>
+            </a>
+            <a href="#">
+              <i class="far fa-bell" style={{ color: "#878ba2" }}></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-user-friends" style={{ color: "#878ba2" }}></i>
+            </a>
+          </li>
           <li>
             <a href="#">
-              <h4>
-                <span>
-                  <i className="fas fa-rocket"></i>
+              <p style={{ fontSize: "10pt", fontWeight: "400" }}>
+                <span
+                  style={{
+                    color: "#878ba2",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "2ch",
+                  }}
+                >
+                  {user.org_name}
+                  <i
+                    class="fas fa-caret-right"
+                    style={{ transform: "translateY(1.5px)" }}
+                  ></i>
                 </span>
-                Trial Expires in 11 day
-              </h4>
+              </p>
             </a>
           </li>
           <li>
             <a href="#">
               <h5>
-                <i class="fas fa-cog"></i>
-              </h5>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h4>
-                {" "}
-                <span>{user.org_name}</span>
-              </h4>
-            </a>
-          </li>
-
-          {/* <li><a href="#"><h4><i className="fas fa-rocket"></i></h4></a></li> */}
-          <li>
-            <a href="#">
-              <h4>
-                {" "}
-                <b>
-                  {" "}
-                  <i class="fas fa-plus-square"></i>
-                </b>
-              </h4>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h3>
                 <Button
-                  style={{ color: "white" }}
+                  style={{ color: "#878ba2" }}
                   id="demo-positioned-button"
                   aria-controls="demo-positioned-menu"
                   aria-haspopup="true"
@@ -178,7 +225,7 @@ export default function Navbar() {
                     {user.name}
                   </i>
                 </Button>
-              </h3>
+              </h5>
             </a>
           </li>
         </ol>
@@ -188,9 +235,9 @@ export default function Navbar() {
         aria-labelledby="demo-positioned-button"
         anchorEl={anchorEl}
         open={open}
-        onClose={handleClose}
+        onClose={handleCloseMenu}
         anchorOrigin={{
-          vertical: "top",
+          vertical: "bottom",
           horizontal: "left",
         }}
         transformOrigin={{
@@ -199,19 +246,20 @@ export default function Navbar() {
         }}
       >
         <MenuItem onClick={handleProfile}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
       <div
         className={classes.wrapper}
         style={{
-          marginTop: "47px",
           marginLeft: "-4px",
           position: "fixed",
-          top: "20px",
+          top: "48px",
         }}
       >
         <div class={classes.sidebar}>
-          <h2>My View</h2>
+          <h4>
+            My View <i class="fas fa-angle-down"></i>
+          </h4>
           <ul className={classes.ul}>
             <li>
               <i class="fas fa-home"></i>

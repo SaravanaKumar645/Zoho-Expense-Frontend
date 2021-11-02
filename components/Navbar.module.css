@@ -3,31 +3,28 @@
   height: 50px;
   background-color: #3e4566;
 }
-
-.brandlogo {
-  color: whitesmoke;
-  padding: 3px;
-}
-
 .wrapper {
   display: flex;
   position: relative;
 }
-
 .wrapper .sidebar {
   width: 200px;
-  height: 100%;
+  height: 100vh;
   text-align: left;
   background: #f3f3fa;
-  padding: 10px 0px;
+  padding: 13px;
   position: fixed;
   border-right: 1px solid rgba(202, 201, 201, 0.5);
 }
 
-.wrapper .sidebar h2 {
+.wrapper .sidebar h4 {
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.342);
-  text-align: center;
+  text-align: left;
+  padding: 10px;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
@@ -36,7 +33,7 @@
   padding: 10px;
   padding-left: 20px;
   display: grid;
-  border-radius: 10px;
+  border-radius: 5px;
   align-items: center;
   flex-wrap: wrap;
   cursor: pointer;
@@ -58,7 +55,7 @@
 }
 .wrapper .sidebar ul li:hover {
   cursor: pointer;
-  box-shadow: 5px 5px 11px rgb(189, 187, 187);
+  box-shadow: 2px 2px 14px rgb(189, 187, 187);
   background-color: white;
   border: 1px solid whitesmoke;
   font-weight: bold;
@@ -70,15 +67,28 @@
   width: 100%;
   background-color: #333956;
   position: relative;
+  display: flex;
   justify-content: space-between;
   text-align: center;
-  padding: 15px 30px;
+  padding: 6px;
 }
-
 .nav .icon {
-  font-size: 25px;
-  font-weight: 800;
-  color: white;
+  display: flex;
+  gap: 1ch;
+  width: 194px;
+  align-items: center;
+  border-right: 1px solid #878ba25b;
+  justify-content: center;
+  padding-right: 5px;
+}
+.nav .icon .logo {
+  height: 24px;
+  width: 24px;
+}
+.nav .icon .logoText {
+  font-size: 19pt;
+  font-weight: 500;
+  color: #878ba2;
 }
 
 .nav ol {
@@ -89,9 +99,12 @@
 
 .nav ol li {
   margin: 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav ol li a h4 {
+/* .nav ol li a h4 {
   color: gainsboro;
   letter-spacing: 1px;
   padding: 5px 10px;
@@ -106,47 +119,59 @@
   color: skyblue;
   letter-spacing: 1px;
   padding: 5px 10px;
+} */
+.nav .ol .navIconList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2ch;
+  border-right: 1px solid #878ba25b;
+  padding-right: 20px;
+  font-size: 11pt;
 }
 .nav ol li a h5 {
-  color: gainsboro;
   letter-spacing: 1px;
   padding: 5px 10px;
 }
-
+.nav .search_box {
+  display: flex;
+  border-right: 1px solid rgba(255, 255, 255, 0.09);
+  padding-right: 25px;
+  align-items: center;
+  justify-content: center;
+}
 .nav .search_box input {
   border: none;
   outline: none;
   background: rgba(255, 255, 255, 0.09);
-  height: 100%;
+  height: 35px;
+  border-radius: 0 4px 4px 0;
   padding: 0 10px;
-
-  font-size: 20px;
-  width: 350px;
+  font-size: 11pt;
+  width: 600px;
+  color: #878ba2;
 }
-
-.nav .search_box input:hover {
+.nav .search_box input::placeholder {
+  color: #878ba2;
+}
+.nav .search_box input:focus {
   border: none;
   outline: none;
   background: white;
-  height: 100%;
-  padding: 0 10px;
-  font-size: 20px;
-  width: 350px;
 }
 
-.nav .search_box span {
-  color: gray;
-  font-size: 20px;
+.nav .search_box img {
+  height: 34px;
+  align-items: center;
+  padding: 9px;
+  border-radius: 4px 0 0 4px;
+  border-right: 1px solid rgba(255, 255, 255, 0.09);
   background-color: rgba(255, 255, 255, 0.09);
-  height: 100%;
-  padding: 8px;
-  position: relative;
-  cursor: pointer;
-  z-index: 1;
+  justify-content: center;
+  width: 45px;
 }
 .head {
   color: #594f8d;
-
   font-size: 40px;
 }
 .navhead {

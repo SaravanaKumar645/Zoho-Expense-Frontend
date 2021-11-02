@@ -1,17 +1,14 @@
-import withAuth from "../auth/prodectedroutes"
-import Home from "../components/Home"
-import Layout from "../components/Layout"
-
+import withAuth from "../auth/prodectedroutes";
+import Home from "../components/Home";
+import Layout from "../components/Layout";
 
 function home() {
-    return (
-        <div>
-          
-          <Layout/>
-          <Home/>
-            
-         </div>
-    )
+  return (
+    <>
+      <Layout />
+      <Home />
+    </>
+  );
 }
 
-export default withAuth(home)
+export default withAuth(home);

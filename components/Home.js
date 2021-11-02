@@ -2,17 +2,15 @@ import classes from "./Home.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPager } from "@fortawesome/free-solid-svg-icons";
-import {  authenticate, isAutheticated } from "../auth/Auth";
+import { authenticate, isAutheticated } from "../auth/Auth";
 
 function Home() {
-
   const { user } = isAutheticated();
 
   return (
     <div className={classes.content}>
-     
       <div className={classes.navhead}>
-      <h1>Hai {user.name} ,</h1>
+        <h1>Hai {user.name} ,</h1>
         <h2 className={classes.head}>
           Welcome <br />
           Let's Get Started!
@@ -48,8 +46,7 @@ function Home() {
           <div>
             {" "}
             <h3>
-            <i class="fas fa-scroll"></i> Create
-              Expense{" "}
+              <i class="fas fa-scroll"></i> Create Expense{" "}
             </h3>
             <br />
             <p> Upload receipts automatically and Convert to expenses.</p>

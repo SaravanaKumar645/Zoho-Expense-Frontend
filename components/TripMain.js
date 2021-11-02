@@ -1,5 +1,5 @@
 import classes from "./TripMain.module.css";
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import NewTrips from "./Trips";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -141,11 +141,12 @@ export default function TripMain() {
           pageSizeOptions: [5, 10, 20, 30],
 
           headerStyle: {
-            backgroundColor: "#8FD6E1",
+            backgroundColor: "#22b378",
             color: "black",
             fontSize: "14px",
             padding: "15px 5px",
             fontFamily: "Poppins, sans-serif",
+            fontWeight: "bold",
           },
           cellStyle: {
             textAlign: "left",

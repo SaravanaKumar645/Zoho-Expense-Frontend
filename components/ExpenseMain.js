@@ -1,5 +1,5 @@
 import classes from "./ExpenseMain.module.css";
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import NewTrips from "./Trips";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +10,6 @@ import { useRouter } from "next/router";
 
 import { signin, authenticate, isAutheticated } from "../auth/Auth";
 
-
 import {
   faEllipsisH,
   faQuestion,
@@ -18,7 +17,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { getExpense, deleteTrip } from "../auth/Trips";
-
 
 export default function ExpenseMain() {
   const router = useRouter();
@@ -54,10 +52,7 @@ export default function ExpenseMain() {
         <p>Pending Expense</p>&nbsp;&nbsp;
         <p style={{ marginRight: "700px" }}>All Expense</p>
         <div className={classes.headerright}>
-          <button
-            className={classes.addnewtrip}
-            style={{ padding: "10px 15px" }}
-          >
+          <button className={classes.addnewexpense}>
             <Link href="/expense">
               <a>+ New Expense</a>
             </Link>
@@ -142,9 +137,10 @@ export default function ExpenseMain() {
           pageSizeOptions: [5, 10, 20, 30],
 
           headerStyle: {
-            backgroundColor: "#8FD6E1",
+            backgroundColor: "#22b378",
             color: "black",
             fontSize: "14px",
+            fontWeight: "bold",
             padding: "15px 5px",
             fontFamily: "Poppins, sans-serif",
           },
