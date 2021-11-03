@@ -1,0 +1,220 @@
+.basicInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3ch;
+}
+/* .basicInfo svg {
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+} */
+.personalDetails {
+  display: flex;
+  width: 900px;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  margin-left: 40px;
+  box-shadow: 0 0 6px #c6c6c9;
+}
+.personalDetails1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 10pt;
+  width: 430px;
+  gap: 5ch;
+  border-right: 1px solid #e0e0e4;
+}
+.personalDetails2 {
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5ch;
+  font-size: 10pt;
+  width: 430px;
+}
+.personalDetails2_1 {
+  border-top: 1px solid #e0e0e4;
+  padding-top: 15px;
+}
+.personalDetails2_1 .border {
+  width: 30px;
+  height: 2px;
+  margin-top: 20px;
+  background-color: #22b378;
+}
+.personalDetails2_1 :nth-child(3) {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  max-width: 390px;
+  margin-top: 20px;
+  border-radius: 6px;
+  padding: 10px;
+  transform: translateX(-10px);
+  text-align: left;
+  font-size: 9pt;
+  cursor: pointer;
+}
+.personalDetails2_1 :nth-child(3):hover {
+  background-color: #eaeaf7;
+}
+.personalDetails svg {
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+}
+.personalDetails .title {
+  width: 100%;
+  background-color: #f4f4fb;
+  text-align: left;
+  font-size: 11pt;
+  padding: 13px;
+}
+.personalDetails .content {
+  display: flex;
+  padding: 30px;
+}
+.personalDetails .title p {
+  display: flex;
+  align-items: center;
+  gap: 1ch;
+}
+.personalDetails .content p {
+  color: #696d9a;
+  font-size: 10pt;
+  /* border-bottom: 2px solid #ececf9; */
+}
+
+/* Todo: Travel Details */
+.travelDetails {
+  display: flex;
+  width: 900px;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  margin-left: 40px;
+  box-shadow: 0 0 6px #c6c6c9;
+}
+.travelDetails svg {
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+}
+.travelDetails .title {
+  width: 100%;
+  background-color: #f4f4fb;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11pt;
+  padding: 13px;
+}
+.travelDetails .content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+.travelDetails .content p {
+  color: #696d9a;
+  padding-bottom: 30px;
+  font-size: 10pt;
+  /* border-bottom: 2px solid #ececf9; */
+}
+.travelDetails .title p {
+  display: flex;
+  align-items: center;
+  gap: 1ch;
+}
+.travelDetails .title #editIcon {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 9px;
+  cursor: pointer;
+  border: 1px solid #bebec2;
+}
+.travelDetails .title #editIcon:hover {
+  fill: #22b378;
+  border: 1px solid #22b378;
+  box-shadow: 0 0 8px #c6c6c9;
+}
+
+/* //Last Two Boxes */
+.lastTwoBoxes {
+  display: flex;
+  margin-bottom: 50px;
+}
+.myDelegate svg,
+.outOfOffice svg {
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+}
+.myDelegate,
+.outOfOffice {
+  display: flex;
+  width: 430px;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  margin-left: 40px;
+  box-shadow: 0 0 6px #c6c6c9;
+}
+.myDelegate .title,
+.outOfOffice .title {
+  width: 100%;
+  background-color: #f4f4fb;
+  text-align: left;
+  font-size: 11pt;
+  padding: 13px;
+}
+.myDelegate .title p,
+.outOfOffice .title p {
+  display: flex;
+  align-items: center;
+  gap: 1ch;
+}
+.myDelegate .content,
+.outOfOffice .content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+.myDelegate .content p,
+.outOfOffice .content p {
+  color: #696d9a;
+  padding-bottom: 30px;
+  font-size: 10pt;
+  border-bottom: 2px solid #ececf9;
+}
+.myDelegate .content p span,
+.outOfOffice .content p span {
+  color: #408dfb;
+  opacity: 0.8;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 14px;
+}
+.myDelegate .content p span:hover,
+.outOfOffice .content p span:hover {
+  color: #0461e4;
+}
+.myDelegate .content button,
+.outOfOffice .content button {
+  width: fit-content;
+  margin-top: 25px;
+  border: none;
+  padding: 9px 21px 9px 21px;
+  font-size: 10pt;
+  background-color: #e4f6ef;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #22b378;
+}
+.myDelegate .content button:hover,
+.outOfOffice .content button:hover {
+  background-color: #22b378;
+  color: white;
+}

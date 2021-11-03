@@ -49,23 +49,21 @@ export default function Navbar() {
     return (
       <div>
         <h4>
-          Admin View <i class="fas fa-angle-down"></i>
+          Admin View <i className="fas fa-angle-down"></i>
         </h4>
         <ul className={classes.ul}>
-          <li>
-            <i class="fas fa-suitcase-rolling"></i>
-            <Link href="/admintrip">
+          <Link href="/admintrip">
+            <li>
+              <i className="fas fa-suitcase-rolling"></i>
               <a className={classes.a}>Trips</a>
-            </Link>
-          </li>
-
-          <li>
-            <i class="fas fa-wallet"></i>{" "}
-            <Link href="/adminReport">
+            </li>
+          </Link>
+          <Link href="/adminReport">
+            <li>
+              <i className="fas fa-wallet"></i>{" "}
               <a className={classes.a}>Reports</a>
-            </Link>
-          </li>
-
+            </li>
+          </Link>
           <br />
           <br />
         </ul>
@@ -75,13 +73,13 @@ export default function Navbar() {
 
   const { user } = isAutheticated();
   return (
-    <>
+    <div>
       <Head>
         <title>Home page</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <script
           src="https://kit.fontawesome.com/1794b9b2a9.js"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></script>
       </Head>
       {/* <div className={classes.topnav}>
@@ -167,7 +165,7 @@ export default function Navbar() {
           <li className={classes.navIconList}>
             <a href="#">
               <i
-                class="fas fa-plus"
+                className="fas fa-plus"
                 style={{
                   color: "rgba(255, 255, 255, 0.925)",
                   padding: "5px",
@@ -179,13 +177,16 @@ export default function Navbar() {
               ></i>
             </a>
             <a href="#">
-              <i class="fas fa-cog" style={{ color: "#878ba2" }}></i>
+              <i className="fas fa-cog" style={{ color: "#878ba2" }}></i>
             </a>
             <a href="#">
-              <i class="far fa-bell" style={{ color: "#878ba2" }}></i>
+              <i className="far fa-bell" style={{ color: "#878ba2" }}></i>
             </a>
             <a href="#">
-              <i class="fas fa-user-friends" style={{ color: "#878ba2" }}></i>
+              <i
+                className="fas fa-user-friends"
+                style={{ color: "#878ba2" }}
+              ></i>
             </a>
           </li>
           <li>
@@ -202,7 +203,7 @@ export default function Navbar() {
                 >
                   {user.org_name}
                   <i
-                    class="fas fa-caret-right"
+                    className="fas fa-caret-right"
                     style={{ transform: "translateY(1.5px)" }}
                   ></i>
                 </span>
@@ -220,7 +221,7 @@ export default function Navbar() {
                   aria-expanded={open ? "true" : undefined}
                   onClick={handleClick}
                 >
-                  <i class="fa fa-user" aria-hidden="true">
+                  <i className="fa fa-user" aria-hidden="true">
                     {" "}
                     {user.name}
                   </i>
@@ -256,36 +257,44 @@ export default function Navbar() {
           top: "48px",
         }}
       >
-        <div class={classes.sidebar}>
+        <div className={classes.sidebar}>
           <h4>
-            My View <i class="fas fa-angle-down"></i>
+            My View <i className="fas fa-angle-down"></i>
           </h4>
           <ul className={classes.ul}>
-            <li>
-              <i class="fas fa-home"></i>
-              <Link href="/home">
+            <Link href="/home">
+              <li>
+                <i className="fas fa-home"></i>
+
                 <a className={classes.a}>Home</a>
-              </Link>
-            </li>
-            <li>
-              {/* <FontAwesomeIcon icon={faBuilding} className={classes.fas} />{" "} */}
-              <i class="fas fa-suitcase-rolling"></i>
-              <Link href="/tripmain">
+              </li>
+            </Link>
+            <Link href="/tripmain">
+              <li>
+                {/* <FontAwesomeIcon icon={faBuilding} className={classes.fas} />{" "} */}
+                <i className="fas fa-suitcase-rolling"></i>
+
                 <a className={classes.a}>Trips</a>
-              </Link>
-            </li>
-            <li>
-              <i class="fas fa-scroll"></i>{" "}
-              <Link href="/expensemain">
+              </li>
+            </Link>
+            <Link href="/expensemain">
+              <li>
+                <i className="fas fa-scroll"></i>{" "}
                 <a className={classes.a}>Expenses</a>
-              </Link>
-            </li>
-            <li>
-              <i class="fas fa-wallet"></i>{" "}
-              <Link href="/reportmain">
+              </li>
+            </Link>
+            <Link href="/reportmain">
+              <li>
+                <i className="fas fa-wallet"></i>{" "}
                 <a className={classes.a}>Reports</a>
-              </Link>
-            </li>
+              </li>
+            </Link>
+            <Link href="/my_settings">
+              <li>
+                <i className="fas fa-cog"></i>{" "}
+                <a className={classes.a}>My Settings</a>
+              </li>
+            </Link>
             <br />
             <br />
           </ul>
@@ -293,6 +302,6 @@ export default function Navbar() {
           {user.role == 1 && admins()}
         </div>
       </div>
-    </>
+    </div>
   );
 }

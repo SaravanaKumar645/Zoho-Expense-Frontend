@@ -16,23 +16,20 @@ function Expense() {
   const { user, token } = isAutheticated();
 
   const [values, setValues] = useState({
-
-
-      email:"",
-      org_name:"", 
-      expense_date:"",
-      merchant:"",
-      category:"",
-      amount:"",
-      paid_through:"",
-      description:"",
-      ref_id:"",
-      add_report:"",
-      error:false,
-        sucess:"",
-        didRedirect:false,
-        isclick:""
-      
+    email: "",
+    org_name: "",
+    expense_date: "",
+    merchant: "",
+    category: "",
+    amount: "",
+    paid_through: "",
+    description: "",
+    ref_id: "",
+    add_report: "",
+    error: false,
+    sucess: "",
+    didRedirect: false,
+    isclick: "",
   });
   const {
     expense_date,
@@ -132,14 +129,13 @@ function Expense() {
         {" "}
         <h2 className={classes.heading}>
           {" "}
-          <i class="fas fa-scroll"></i> Add
-          Expense
+          <i class="fas fa-scroll"></i> Add Expense
         </h2>
         <div>
           <button className={classes.exit}>
             <Link href="/expensemain">
               <a>
-              <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-xmark"></i>
               </a>
             </Link>
           </button>

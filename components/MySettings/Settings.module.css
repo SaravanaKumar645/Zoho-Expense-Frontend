@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3ch;
+  width: 87.3%;
+  height: 100%;
+  margin-top: 48px;
+  margin-left: 196.3px;
+}
+.container .header {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  padding: 20px;
+  background-color: #f7f7fb;
+  border-bottom: 2px solid #a4a4af;
+  box-shadow: 1px 1px 4px #c6c6c9;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3ch;
+}
+.header .title h3 {
+  font-weight: 600;
+}
+.header .title {
+  display: flex;
+  align-items: center;
+  gap: 130ch;
+}
+.title .helpButton {
+  background-color: white;
+  /* border: 1px solid rgba(44, 88, 233, 0.884); */
+  /* color: rgba(44, 88, 233, 0.884); */
+  border: 1px solid dodgerblue;
+  color: dodgerblue;
+  border-radius: 5px;
+  justify-content: center;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  align-items: center;
+}
+.title .helpButton:hover {
+  border: none;
+  background-color: dodgerblue;
+  color: white;
+}
+.header .tabSection {
+  list-style-type: none;
+  display: flex;
+  gap: 5ch;
+}
+
+.tabSection .tabButton,
+.tabSection .tabFocused {
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 12pt;
+  background-color: transparent;
+}
+.tabSection .tabButton:hover {
+  color: #22b378;
+}
+.tabSection .tabFocused {
+  color: #22b378;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #22b378;
+  font-weight: bold;
+}

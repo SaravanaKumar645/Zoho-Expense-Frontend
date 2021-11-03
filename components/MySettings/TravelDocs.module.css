@@ -1,0 +1,42 @@
+.travelDocs {
+  display: flex;
+  width: 760px;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  margin-left: 40px;
+  box-shadow: 0 0 6px #c6c6c9;
+}
+.travelDocs .title {
+  width: 100%;
+  background-color: #f4f4fb;
+  text-align: left;
+  font-size: 11pt;
+  padding: 13px;
+}
+.travelDocs .content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+.travelDocs .content p {
+  color: #696d9a;
+  padding-bottom: 30px;
+  font-size: 10pt;
+  border-bottom: 2px solid #ececf9;
+}
+.travelDocs .content button {
+  width: fit-content;
+  margin-top: 25px;
+  border: none;
+  padding: 9px 21px 9px 21px;
+  font-size: 10pt;
+  background-color: #e4f6ef;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #22b378;
+}
+.travelDocs .content button:hover {
+  background-color: #22b378;
+  color: white;
+}
