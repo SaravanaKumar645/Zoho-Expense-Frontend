@@ -7,6 +7,9 @@
   margin-left: 40px;
   box-shadow: 0 0 6px #c6c6c9;
 }
+.travelDocs:hover {
+  box-shadow: 0 0 15px #c6c6c9;
+}
 .travelDocs .title {
   width: 100%;
   background-color: #f4f4fb;

@@ -18,6 +18,9 @@
   flex-wrap: wrap;
   gap: 4ch;
 }
+.emailCards .firstPara:hover {
+  box-shadow: 0 0 15px #c6c6c9;
+}
 .emailCards .firstPara {
   padding: 24px;
   /* border: 1px solid #a4a4af; */
@@ -62,7 +65,7 @@
   transition: all 0.5s ease;
 }
 .emailAutoForward:hover {
-  box-shadow: 0 0 5px #c6c6c9;
+  box-shadow: 0 0 10px #c6c6c9;
 }
 .emailAutoForward p {
   font-size: 9pt;
@@ -85,6 +88,13 @@
   border-bottom: 1px solid #a4a4afd3;
   padding-bottom: 40px;
   flex-direction: column;
+}
+/* /.secondPara:hover,
+.thirdPara:hover {
+  box-shadow: 0 0 15px #c6c6c9;
+} */
+.defaultValues .emailCards p:hover {
+  box-shadow: 0 0 15px #c6c6c9;
 }
 .defaultValues h3 {
   font-weight: 500;

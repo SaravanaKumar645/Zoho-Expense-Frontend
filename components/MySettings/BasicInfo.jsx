@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
 import styles from "./BasicInfo.module.css";
 import Link from "next/link";
-import { personalDetails1, personalDetails2 } from "./BasicInfoDetails";
+import {
+  personalDetails1,
+  personalDetails2,
+  travelDetails1,
+  travelDetails2,
+  travelAddress,
+} from "./BasicInfoDetails";
 import { isAutheticated } from "../../auth/Auth";
 const BasicInfo = () => {
   var personalInfo1 = personalDetails1;
   var personalInfo2 = personalDetails2;
+  var travelInfo1 = travelDetails1;
+  var travelInfo2 = travelDetails2;
+  var travelResidency = travelAddress;
   const [user, setUser] = useState({ org_name: "" });
 
   useEffect(() => {
@@ -13,6 +22,8 @@ const BasicInfo = () => {
     console.log(user);
     personalInfo1[1].value = user.email;
     personalInfo1[0].value = user.name;
+    travelInfo1[0].value = user.name;
+    travelInfo1[3].value = user.email;
     user.role === 1
       ? (personalInfo2[0].value = "Admin")
       : (personalInfo2[0].value = "Employee");
@@ -139,10 +150,112 @@ const BasicInfo = () => {
           </svg>
         </div>
         <div className={styles.content}>
-          <p>
-            Travel documents added here can be accessed by the travel team to
-            facilitate travel booking
-          </p>
+          <div className={styles.travelDetailsWrapper}>
+            <div className={styles.travelDetails1}>
+              {travelInfo1.map((item, index) => {
+                return (
+                  <div style={{ display: "flex" }} key={index}>
+                    <p style={{ maxWidth: "190px", width: "100%" }}>
+                      {item.field}
+                    </p>
+                    <p
+                      style={{
+                        fontWeight: "bold",
+                        color: "black",
+                        maxWidth: "235px",
+                        opacity: "0.8",
+                        display: "flex",
+                        flexWrap: "wrap",
+                        paddingRight: "15px",
+                        fontSize: "11pt",
+                      }}
+                    >
+                      {item.value}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+            <div className={styles.travelDetails2}>
+              {travelInfo2.map((item, index) => {
+                return (
+                  <div style={{ display: "flex" }} key={index}>
+                    <p style={{ maxWidth: "190px", width: "100%" }}>
+                      {item.field}
+                    </p>
+                    <p
+                      style={{
+                        fontWeight: "bold",
+                        color: "black",
+                        maxWidth: "235px",
+                        opacity: "0.8",
+                        display: "flex",
+                        flexWrap: "wrap",
+                        fontSize: "11pt",
+                      }}
+                    >
+                      {item.value}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className={styles.travelAddress}>
+            <strong>ADDRESS</strong>
+            <div className={styles.travelAddressWrapper}>
+              <div className={styles.travelAddressHome}>
+                {travelAddress.slice(0, 2).map((item, index) => {
+                  return (
+                    <div style={{ display: "flex" }} key={index}>
+                      <p style={{ maxWidth: "190px", width: "100%" }}>
+                        {item.field}
+                      </p>
+                      <p
+                        style={{
+                          fontWeight: "bold",
+                          color: "black",
+                          maxWidth: "235px",
+                          opacity: "0.8",
+                          display: "flex",
+                          flexWrap: "wrap",
+                          paddingRight: "15px",
+                          fontSize: "11pt",
+                        }}
+                      >
+                        {item.value}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className={styles.travelAddressWork}>
+                {travelAddress.slice(2).map((item, index) => {
+                  return (
+                    <div style={{ display: "flex" }} key={index}>
+                      <p style={{ maxWidth: "190px", width: "100%" }}>
+                        {item.field}
+                      </p>
+                      <p
+                        style={{
+                          fontWeight: "bold",
+                          color: "black",
+                          maxWidth: "235px",
+                          opacity: "0.8",
+                          display: "flex",
+                          flexWrap: "wrap",
+                          paddingRight: "15px",
+                          fontSize: "11pt",
+                        }}
+                      >
+                        {item.value}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className={styles.lastTwoBoxes}>

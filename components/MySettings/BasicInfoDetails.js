@@ -42,3 +42,49 @@ export const personalDetails2 = [
     value: "-",
   },
 ];
+export const travelDetails1 = [
+  {
+    field: "Name as in Passport",
+    value: "-",
+  },
+  {
+    field: "D.O.B. as in Passport",
+    value: "-",
+  },
+  {
+    field: "Gender",
+    value: "-",
+  },
+  {
+    field: "Personal Email",
+    value: "-",
+  },
+  {
+    field: "Personal Mobile",
+    value: "-",
+  },
+];
+export const travelDetails2 = [
+  {
+    field: "Fax",
+    value: "-",
+  },
+];
+export const travelAddress = [
+  {
+    field: "Home address",
+    value: "-",
+  },
+  {
+    field: "Home Phone",
+    value: "-",
+  },
+  {
+    field: "Work address",
+    value: "-",
+  },
+  {
+    field: "Work Phone",
+    value: "-",
+  },
+];

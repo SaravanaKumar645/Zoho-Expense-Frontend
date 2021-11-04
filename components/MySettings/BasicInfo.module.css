@@ -17,6 +17,9 @@
   margin-left: 40px;
   box-shadow: 0 0 6px #c6c6c9;
 }
+.personalDetails:hover {
+  box-shadow: 0 0 15px #c6c6c9;
+}
 .personalDetails1 {
   display: flex;
   flex-direction: column;
@@ -87,6 +90,7 @@
 }
 
 /* Todo: Travel Details */
+
 .travelDetails {
   display: flex;
   width: 900px;
@@ -95,6 +99,33 @@
   border-radius: 5px;
   margin-left: 40px;
   box-shadow: 0 0 6px #c6c6c9;
+}
+.travelDetails:hover {
+  box-shadow: 0 0 15px #c6c6c9;
+}
+.travelDetails .content {
+  padding: 30px;
+}
+.travelDetailsWrapper {
+  display: flex;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e0e0e4;
+}
+.travelDetails1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 10pt;
+  width: 430px;
+  gap: 4ch;
+  border-right: 1px solid #e0e0e4;
+}
+.travelDetails2 {
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  font-size: 10pt;
+  width: 430px;
+  gap: 3ch;
 }
 .travelDetails svg {
   height: 18px;
@@ -110,14 +141,8 @@
   font-size: 11pt;
   padding: 13px;
 }
-.travelDetails .content {
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-}
 .travelDetails .content p {
   color: #696d9a;
-  padding-bottom: 30px;
   font-size: 10pt;
   /* border-bottom: 2px solid #ececf9; */
 }
@@ -140,6 +165,39 @@
   border: 1px solid #22b378;
   box-shadow: 0 0 8px #c6c6c9;
 }
+.travelAddress {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 10pt;
+  gap: 4ch;
+}
+.travelDetails .travelAddress strong {
+  color: black;
+  font-weight: 400;
+  border-bottom: 2px solid #22b378;
+  max-width: fit-content;
+  padding-bottom: 7px;
+}
+.travelAddress .travelAddressHome {
+  width: 420px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 3ch;
+  border-right: 1px solid #e0e0e4;
+}
+.travelAddress .travelAddressWork {
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  gap: 3ch;
+  padding-left: 30px;
+}
+.travelAddressWrapper {
+  display: flex;
+}
 
 /* //Last Two Boxes */
 .lastTwoBoxes {
@@ -161,6 +219,10 @@
   border-radius: 5px;
   margin-left: 40px;
   box-shadow: 0 0 6px #c6c6c9;
+}
+.myDelegate:hover,
+.outOfOffice:hover {
+  box-shadow: 0 0 15px #c6c6c9;
 }
 .myDelegate .title,
 .outOfOffice .title {
