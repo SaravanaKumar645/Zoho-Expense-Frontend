@@ -29,7 +29,7 @@
   margin-bottom: 20px;
 }
 
-.wrapper .sidebar ul li {
+.wrapper .sidebar ul .navTabLi {
   padding: 10px;
   padding-left: 20px;
   display: grid;
@@ -39,21 +39,44 @@
   cursor: pointer;
   grid-template-columns: 1fr 1fr;
   justify-content: start;
-  border-bottom: 1px solid #bdb8d7;
+  /* border-bottom: 1px solid #bdb8d7; */
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
-.wrapper .sidebar ul li a {
+.wrapper .sidebar ul .navTabLiFocused {
+  padding: 10px;
+  padding-left: 20px;
+  display: grid;
+  border-radius: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+  background-color: #22b378;
+  cursor: pointer;
+  grid-template-columns: 1fr 1fr;
+  justify-content: start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.wrapper .sidebar ul .navTabLiFocused a {
+  color: white;
+  display: flex;
+  font-weight: 700;
+  font-size: 12pt;
+  transform: translateX(-40px);
+  text-decoration: none;
+}
+.wrapper .sidebar ul .navTabLi a {
   color: black;
   display: flex;
   font-size: 12pt;
   transform: translateX(-40px);
   text-decoration: none;
 }
-.ul li:hover > .a {
+.ul .navTabLi:hover > .a {
   color: #22b378;
 }
-.wrapper .sidebar ul li:hover {
+.wrapper .sidebar ul .navTabLi:hover {
   cursor: pointer;
   box-shadow: 2px 2px 14px rgb(189, 187, 187);
   background-color: white;

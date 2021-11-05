@@ -8,7 +8,7 @@ function home() {
       <Head>
         <title>Home Page</title>
       </Head>
-      <Layout />
+      <Layout backgroundTab="home" />
       <Home />
     </>
   );

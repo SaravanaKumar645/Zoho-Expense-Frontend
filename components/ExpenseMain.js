@@ -26,19 +26,19 @@ export default function ExpenseMain() {
   const [datas, setdatas] = useState([]);
 
   console.log(user.email);
+
   useEffect(() => {
+    const { user } = isAutheticated();
     getExpense(user.email)
       .then((data) => {
         console.log(data);
         setdatas(data);
       })
-
       .catch(console.log("Get Expense request failed"));
   }, []);
 
   const Columns = [
     { title: "Expense Date", field: "expense_date" },
-
     { title: "Merchant", field: "merchant" },
     { title: "Category", field: "category" },
     { title: "Amount", field: "amount" },
@@ -186,3 +186,16 @@ export default function ExpenseMain() {
     </div>
   );
 }
+
+// export async function getStaticProps(context) {
+
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+
+//   return {
+//     props: { data }, // will be passed to the page component as props
+//   };
+// }

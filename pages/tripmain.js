@@ -1,11 +1,11 @@
 import Layout from "../components/Layout";
 import TripMain from "../components/TripMain";
 import Head from "next/head";
-import withAuth from "../auth/prodectedroutes"
+import withAuth from "../auth/prodectedroutes";
 function home() {
   return (
     <div>
-      <Layout />
+      <Layout backgroundTab="tripmain" />
       <TripMain />
       <Head>
         <title>Trips Page </title>

@@ -1,7 +1,11 @@
 import Navbar from "./Navbar";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
+  const { asPath } = useRouter();
+  console.log(asPath);
+  // console.log(JSON.stringify(props));
   return (
     <>
       {/* <Signin value={children}/> */}
@@ -13,8 +17,9 @@ export default function Layout({ children }) {
         ></script>
       </Head>
       {}
-      <Navbar />
+      <Navbar tabPath={asPath} />
       <div>{children}</div>
     </>
   );
-}
+};
+export default Layout;

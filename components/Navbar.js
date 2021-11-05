@@ -1,40 +1,30 @@
 import classes from "./Navbar.module.css";
-// import classes from "./../styles/home.module.css";
 import Head from "next/head";
 import Link from "next/link";
 import React, { useState } from "react";
-
 import { signout } from "../auth/Auth";
-
-import {
-  faBuilding,
-  faHome,
-  faPager,
-  faSearch,
-  faUser,
-  faScroll,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import Navbar from "./Navbar";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-
 import { useRouter } from "next/router";
+import { isAutheticated } from "../auth/Auth";
 
-import { signin, authenticate, isAutheticated } from "../auth/Auth";
-
-export default function Navbar() {
+export default function Navbar({ tabPath }) {
+  console.log("Inside Navbar component :: " + tabPath);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-
+  const { user } = isAutheticated();
   const router = useRouter();
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleCloseMenu = () => {
     setAnchorEl(null);
   };
+
   const handleLogout = () => {
     signout(() => {
       router.push("/");
@@ -45,6 +35,7 @@ export default function Navbar() {
     router.push("/profile");
   };
 
+  //*------------Admin view Render component-----------
   const admins = () => {
     return (
       <div>
@@ -53,13 +44,32 @@ export default function Navbar() {
         </h4>
         <ul className={classes.ul}>
           <Link href="/admintrip">
-            <li>
+            <li
+              className={
+                tabPath === "/admintrip"
+                  ? classes["navTabLiFocused"]
+                  : classes["navTabLi"]
+              }
+            >
               <i className="fas fa-suitcase-rolling"></i>
               <a className={classes.a}>Trips</a>
             </li>
           </Link>
-          <Link href="/adminReport">
-            <li>
+          <Link
+            href="/adminReport"
+            className={
+              tabPath === "/adminReport"
+                ? classes["navTabLiFocused"]
+                : classes["navTabLi"]
+            }
+          >
+            <li
+              className={
+                tabPath === "/adminReport"
+                  ? classes["navTabLiFocused"]
+                  : classes["navTabLi"]
+              }
+            >
               <i className="fas fa-wallet"></i>{" "}
               <a className={classes.a}>Reports</a>
             </li>
@@ -71,7 +81,6 @@ export default function Navbar() {
     );
   };
 
-  const { user } = isAutheticated();
   return (
     <div>
       <Head>
@@ -82,35 +91,6 @@ export default function Navbar() {
           crossOrigin="anonymous"
         ></script>
       </Head>
-      {/* <div className={classes.topnav}>
-        <a>
-         <h3> <FontAwesomeIcon icon={faScroll} className={classes.fa}  />  Expenses</h3>
-        </a>
-
-       
-        <div className={classes.searchcontainer}>
-          <form action='/'>
-            <input type='text' placeholder='Search..' name='search' />
-            <button type='submit'>
-              <FontAwesomeIcon icon={faSearch} className={classes.fa} size={100000} />
-
-
-            </button>
-          </form>
-          
-        </div>
-
-       <ul  className={classes.menu}>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-
-       </ul>
-      
-      </div> */}
-
-      {/* <Navbar /> */}
-
       <nav
         className={classes.nav}
         style={{ position: "fixed", top: "0", left: "0", right: "0" }}
@@ -263,14 +243,26 @@ export default function Navbar() {
           </h4>
           <ul className={classes.ul}>
             <Link href="/home">
-              <li>
+              <li
+                className={
+                  tabPath === "/home"
+                    ? classes["navTabLiFocused"]
+                    : classes["navTabLi"]
+                }
+              >
                 <i className="fas fa-home"></i>
 
                 <a className={classes.a}>Home</a>
               </li>
             </Link>
             <Link href="/tripmain">
-              <li>
+              <li
+                className={
+                  tabPath === "/tripmain"
+                    ? classes["navTabLiFocused"]
+                    : classes["navTabLi"]
+                }
+              >
                 {/* <FontAwesomeIcon icon={faBuilding} className={classes.fas} />{" "} */}
                 <i className="fas fa-suitcase-rolling"></i>
 
@@ -278,19 +270,37 @@ export default function Navbar() {
               </li>
             </Link>
             <Link href="/expensemain">
-              <li>
+              <li
+                className={
+                  tabPath === "/expensemain"
+                    ? classes["navTabLiFocused"]
+                    : classes["navTabLi"]
+                }
+              >
                 <i className="fas fa-scroll"></i>{" "}
                 <a className={classes.a}>Expenses</a>
               </li>
             </Link>
             <Link href="/reportmain">
-              <li>
+              <li
+                className={
+                  tabPath === "/reportmain"
+                    ? classes["navTabLiFocused"]
+                    : classes["navTabLi"]
+                }
+              >
                 <i className="fas fa-wallet"></i>{" "}
                 <a className={classes.a}>Reports</a>
               </li>
             </Link>
             <Link href="/my_settings">
-              <li>
+              <li
+                className={
+                  tabPath === "/my_settings"
+                    ? classes["navTabLiFocused"]
+                    : classes["navTabLi"]
+                }
+              >
                 <i className="fas fa-cog"></i>{" "}
                 <a className={classes.a}>My Settings</a>
               </li>
