@@ -1,0 +1,221 @@
+.mainContainer {
+  width: 87.3%;
+  height: 100%;
+  margin-top: 48px;
+  margin-left: 196.3px;
+}
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid gainsboro;
+}
+.leftitems {
+  display: flex;
+  width: 50%;
+}
+.heading {
+  padding: 2%;
+  cursor: pointer;
+  color: #22b378;
+  border-bottom: 4px solid #22b378;
+}
+.heading:hover {
+  color: #22b378;
+}
+.heading2 {
+  padding: 2%;
+  cursor: pointer;
+}
+.heading2:hover {
+  color: #22b378;
+}
+.downbutton {
+  padding: 2%;
+  cursor: pointer;
+}
+.downbutton1 {
+  border-left: 1px solid gainsboro;
+}
+.dropdown {
+  padding: 5%;
+  width: 100%;
+}
+.dropdownhead {
+  opacity: 0.8;
+  text-align: center;
+  padding-left: 5%;
+  font-size: 15px;
+}
+.menuitem {
+  font-size: 15px;
+  text-align: center;
+}
+.menuitem:hover {
+  border-radius: 10px;
+  background-color: rgb(204, 219, 250);
+}
+.customview {
+  color: blue;
+}
+
+.rightitems {
+  display: flex;
+  padding: 1%;
+  float: right;
+  width: 20%;
+  justify-content: space-between;
+}
+.new {
+  color: white;
+  background-color: #22b378;
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+  cursor: pointer;
+  padding: 0 15px 0 15px;
+}
+.new:hover {
+  background-color: white;
+  color: #22b378;
+  border: 2px solid #22b378;
+}
+.iconbutton {
+  background-color: white;
+  color: black;
+  border: 2px solid gainsboro;
+  height: 35px;
+}
+.iconbutton:hover {
+  color: #22b378;
+}
+.help {
+  background-color: white;
+  border: 1px solid dodgerblue;
+  color: dodgerblue;
+  border-radius: 5px;
+  justify-content: center;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  align-items: center;
+}
+.help:hover {
+  background-color: dodgerblue;
+  border: none;
+  color: white;
+}
+.pendingempty {
+  align-items: center;
+  vertical-align: middle;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.image {
+  height: 20%;
+  width: 20%;
+  margin-left: 40%;
+  margin-top: 15%;
+}
+.texts {
+  width: 40%;
+  margin-left: 30%;
+}
+.business {
+  font-weight: bolder;
+}
+.bodytext {
+  opacity: 0.7;
+}
+.lifecycle {
+  width: 100%;
+  text-align: center;
+  margin-top: 10%;
+  background-color: rgb(236, 243, 255);
+}
+.boxreport {
+  border: 1px solid gainsboro;
+  padding: 2%;
+  width: 80%;
+  margin-top: 2%;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+.boxreport:hover {
+  box-shadow: 0 0 20px #ccc;
+}
+.boxhead {
+  text-align: left;
+  padding: 1%;
+  text-transform: capitalize;
+  color: rgb(44, 110, 253);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.boxline {
+  opacity: 0.4;
+}
+.boxreport > table {
+  justify-content: space-evenly;
+  padding: 2%;
+  width: 100%;
+}
+.boxreport > table > tr > th {
+  opacity: 0.7;
+  font-weight: lighter;
+  text-align: left;
+}
+.boxreport > table > tr > td {
+  font-weight: bolder;
+}
+.report {
+  width: 100%;
+}
+.reporthead {
+  color: rgb(44, 110, 253);
+}
+.report > table {
+  width: 100%;
+}
+.report > table > tr > th {
+  border-bottom: 1px solid gainsboro;
+  padding: 1%;
+  font-weight: lighter;
+  opacity: 0.7;
+}
+.report > table > tr > td {
+  border-bottom: 1px solid gainsboro;
+  text-align: center;
+  padding: 1%;
+  text-transform: capitalize;
+}
+.dialog {
+  width: 100%;
+  padding: 0%;
+}
+.dialoghead {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(240, 240, 240);
+  width: 100%;
+}
+.close {
+  cursor: pointer;
+  background-color: rgb(209, 207, 207);
+  border-radius: 50%;
+  width: 30px;
+  text-align: center;
+}
+.textfield {
+  width: 500px;
+}
+.duration {
+  display: flex;
+  justify-content: space-between;
+}
+.durfield {
+  width: 230px;
+}

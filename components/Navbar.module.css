@@ -126,7 +126,25 @@
   align-items: center;
   justify-content: center;
 }
-
+.nav #olid li #iTag {
+  color: #878ba2;
+}
+.nav #olid li #iTag:hover {
+  color: whitesmoke;
+  cursor: pointer;
+}
+.nav #olid li #plusIcon {
+  color: rgba(255, 255, 255, 0.925);
+  padding: 5px;
+  width: 28px;
+  border-radius: 3px;
+  background-color: #22b378;
+  font-weight: 600;
+}
+.nav #olid li #plusIcon:hover {
+  background-color: #c9f7e5;
+  color: #22b378;
+}
 /* .nav ol li a h4 {
   color: gainsboro;
   letter-spacing: 1px;
@@ -177,21 +195,29 @@
 .nav .search_box input::placeholder {
   color: #878ba2;
 }
+
 .nav .search_box input:focus {
   border: none;
   outline: none;
-  background: white;
+  color: black;
+  background-color: white;
 }
-
-.nav .search_box img {
-  height: 34px;
+.nav .search_box #searchIcon {
+  height: 35px;
+  width: 44px;
+  fill: #878ba2;
   align-items: center;
-  padding: 9px;
+  cursor: pointer;
+  padding: 10px;
   border-radius: 4px 0 0 4px;
   border-right: 1px solid rgba(255, 255, 255, 0.09);
   background-color: rgba(255, 255, 255, 0.09);
   justify-content: center;
-  width: 45px;
+}
+
+.nav .search_box #searchIcon:hover {
+  fill: black;
+  background-color: white;
 }
 .head {
   color: #594f8d;
