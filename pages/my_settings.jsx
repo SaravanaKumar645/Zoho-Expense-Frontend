@@ -6,7 +6,7 @@ import Settings from "../components/MySettings/Settings";
 const MySettings = () => {
   return (
     <>
-      <Layout backgroundTab='settings' />
+      <Layout backgroundTab="settings" />
       <Settings />
       <Head>
         <title>My Settings </title>

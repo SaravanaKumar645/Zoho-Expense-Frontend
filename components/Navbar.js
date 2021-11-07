@@ -334,6 +334,20 @@ export default function Navbar({ tabPath }) {
                 <a className={classes.a}>Reports</a>
               </li>
             </Link>
+            <Link href="/cardsmain/cardsmain">
+              <li
+                className={
+                  tabPath.includes([
+                    "/cardsmain/cardsmain" || "/cardsmain/newcard",
+                  ])
+                    ? classes["navTabLiFocused"]
+                    : classes["navTabLi"]
+                }
+              >
+                <i class="far fa-credit-card"></i>{" "}
+                <a className={classes.a}>Cards</a>
+              </li>
+            </Link>
             <Link href="/user_approvals">
               <li
                 className={
