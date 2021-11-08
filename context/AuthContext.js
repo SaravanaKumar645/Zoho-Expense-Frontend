@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
   }) => {
     console.log(name, orgname, country, email, password, state, phone);
     const res = await fetch(
-      `https://zoho-expense-server.vercel.app/api/register`,
+      "https://zoho-expense-server.vercel.app/api/register",
       {
         method: "POST",
         headers: {
@@ -42,12 +42,6 @@ export const AuthProvider = ({ children }) => {
     );
 
     const data = await res.json();
-    // console.log(data.data.name);
-
-    // localStorage.setItem('name', JSON.stringify(data.name))
-    // localStorage.setItem('email', JSON.stringify(data.email))
-    // localStorage.setItem('id', JSON.stringify(data.id))
-
     if (res.ok) {
       setUser(data.name);
       router.push("/home");

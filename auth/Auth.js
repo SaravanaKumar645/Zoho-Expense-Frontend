@@ -1,5 +1,5 @@
-export const signup = (user) => {
-  return fetch("https://zoho-expense-server.vercel.app/api/signup", {
+export const signup = async (user) => {
+  return await fetch("https://zoho-expense-server.vercel.app/api/signup", {
     method: "POST",
     headers: {
       Accept: "application/json",
