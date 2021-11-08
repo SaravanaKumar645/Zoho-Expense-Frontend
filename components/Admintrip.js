@@ -43,8 +43,7 @@ export default function AdminTrip() {
         console.log(data);
         setdatas(data);
       })
-
-      .catch(console.log("Get Admin Trpis request failed"));
+      .catch((err) => console.log("Get Admin Trpis request failed" + err));
   }, []);
 
   const handleClickOpen = (e) => {

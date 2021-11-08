@@ -17,8 +17,7 @@ const Approver = ({ rowData }) => {
       .then((data) => {
         setData(data);
       })
-
-      .catch(console.log("Get Trpis request failed"));
+      .catch((err) => console.log("Get Trpis request failed" + err));
   }, []);
 
   function setLog(e) {
