@@ -390,16 +390,19 @@ export default function Reports() {
         <DialogTitle>
           <div className={styles.dialoghead}>
             <h4>New Report</h4>
-            <h6 className={styles.close} onClick={handleDialogClose}>
-              X
-            </h6>
+            <i
+              className="fas fa-window-close"
+              id={styles.close}
+              onClick={handleDialogClose}
+            ></i>
           </div>
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
-            <div>
-              <h5>Report name*</h5>
+            <div className={styles.fieldContainer}>
+              <h5 style={{ color: "#b94a48" }}>Report name*</h5>
               <TextField
+                autoFocus
                 value={reportName}
                 onChange={(e) => setReportName(e.target.value)}
                 placeholder="eg:Trip to New York"
@@ -438,7 +441,11 @@ export default function Reports() {
           >
             Save
           </Button>
-          <Button variant="outlined" onClick={handleDialogClose}>
+          <Button
+            variant="outlined"
+            onClick={handleDialogClose}
+            className={styles.cancelButton}
+          >
             Cancel
           </Button>
         </DialogActions>

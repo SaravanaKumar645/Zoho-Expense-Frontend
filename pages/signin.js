@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-
 import { useRouter } from "next/router";
-
 import { signin, authenticate, isAutheticated } from "../auth/Auth";
-
 import { FaUser } from "react-icons/fa";
 import Link from "next/link";
 import styles from "../styles/AuthForm.module.css";
@@ -13,8 +10,8 @@ import travel from "../public/travelimg3.jpeg";
 const Signin = () => {
   const router = useRouter();
   const [values, setValues] = useState({
-    email: "", //dgowtham@gmail.com
-    password: "", //gnmathd
+    email: "",
+    password: "",
     error: "",
     loading: false,
     didRedirect: false,
@@ -62,12 +59,6 @@ const Signin = () => {
 
   const errorMessage = () => {
     return (
-      // <div className="alertinvalid">
-      //   <div className="errormsg" style={{ display: values.error ? "" : "none" }}>
-      //     {values.error}
-      //   </div>
-      // </div>
-
       <div className="row">
         <div className="col-md-3 offset-sm-2 text-left">
           <div
@@ -136,13 +127,10 @@ const Signin = () => {
   };
 
   return (
-    //<div style={{ padding:"200px"}}>
-
     <>
       {/* {loadingMessage()} */}
       {/* {errorMessage()} */}
       {signInForm()}
-
       {performRedirect()}
     </>
 

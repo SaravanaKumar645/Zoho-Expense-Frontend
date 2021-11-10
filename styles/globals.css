@@ -18,4 +18,11 @@ a {
   list-style: none;
   text-decoration: none;
 }
-
+.fa-window-close {
+  cursor: pointer;
+  font-size: 20pt;
+  color: rgb(68, 66, 66);
+}
+.fa-window-close:hover {
+  color: #22b378;
+}

@@ -198,16 +198,26 @@
 }
 .dialoghead {
   display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
   justify-content: space-between;
   background-color: rgb(240, 240, 240);
   width: 100%;
 }
-.close {
-  cursor: pointer;
-  background-color: rgb(209, 207, 207);
-  border-radius: 50%;
-  width: 30px;
-  text-align: center;
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2ch;
+}
+.cancelButton {
+  color: #22b378;
+  border-color: #22b378;
+}
+.cancelButton:hover {
+  color: #22b378;
+  background-color: #f2fff9;
+  border-color: #22b378;
 }
 .textfield {
   width: 500px;
@@ -218,4 +228,8 @@
 }
 .durfield {
   width: 230px;
+}
+.textfield:hover,
+.durfield:hover {
+  box-shadow: 0 0 10px dodgerblue;
 }

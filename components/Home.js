@@ -23,7 +23,7 @@ function Home() {
         <div className={classes.trip}>
           <div>
             <h3>
-              <i class="fas fa-suitcase-rolling"></i> Create Trip{" "}
+              <i className="fas fa-suitcase-rolling"></i> Create Trip{" "}
             </h3>
             <br />
             <p>
@@ -46,7 +46,7 @@ function Home() {
           <div>
             {" "}
             <h3>
-              <i class="fas fa-scroll"></i> Create Expense{" "}
+              <i className="fas fa-scroll"></i> Create Expense{" "}
             </h3>
             <br />
             <p> Upload receipts automatically and Convert to expenses.</p>

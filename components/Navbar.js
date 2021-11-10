@@ -9,11 +9,30 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { useRouter } from "next/router";
 import { isAutheticated } from "../auth/Auth";
+import { Tooltip, tooltipClasses } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
 export default function Navbar({ tabPath }) {
   console.log("Inside Navbar component :: " + tabPath);
+
+  // *For Tooltip
+  const BootstrapTooltip = styled(({ className, ...props }) => (
+    <Tooltip {...props} arrow classes={{ popper: className }} />
+  ))(({ theme }) => ({
+    [`& .${tooltipClasses.arrow}`]: {
+      color: theme.palette.common.black,
+    },
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: theme.palette.common.black,
+      fontSize: "10pt",
+      padding: "10px 15px 10px 15px",
+      textAlign: "center",
+    },
+  }));
+
   const [anchorEl, setAnchorEl] = useState(null);
   const [isSearchIconFocused, setSearchIconFocused] = useState(false);
+  const [showToolTip, setShowToolTip] = useState(false);
   const open = Boolean(anchorEl);
   const { user } = isAutheticated();
   const router = useRouter();
@@ -43,6 +62,7 @@ export default function Navbar({ tabPath }) {
   };
   const onSearchInputFocus = (event) => {
     setSearchIconFocused((value) => !value);
+    setShowToolTip(false);
   };
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -111,7 +131,6 @@ export default function Navbar({ tabPath }) {
   return (
     <div>
       <Head>
-        <title>Home page</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <script
           src="https://kit.fontawesome.com/1794b9b2a9.js"
@@ -122,10 +141,12 @@ export default function Navbar({ tabPath }) {
         className={classes.nav}
         style={{ position: "fixed", top: "0", left: "0", right: "0" }}
       >
-        <div className={classes.icon}>
-          <img src="/zoho-expense1.png" className={classes.logo}></img>
-          <p className={classes.logoText}>Expense</p>
-        </div>
+        <Link href="/home">
+          <div className={classes.icon}>
+            <img src="/zoho-expense1.png" className={classes.logo}></img>
+            <p className={classes.logoText}>Expense</p>
+          </div>
+        </Link>
         <div className={classes.search_box}>
           {/* <img src="/search-icon.png" className={classes.searchIcon}></img> */}
           <svg
@@ -139,13 +160,21 @@ export default function Navbar({ tabPath }) {
           >
             <path d="M491.9 470.7L358 336.8c30.3-35.2 46.8-79.6 46.8-126.6 0-52-20.2-100.9-57-137.6-75.9-75.9-199.3-75.9-275.2 0-75.9 75.9-75.9 199.3 0 275.2 36.8 36.8 85.6 57 137.6 57 46.9 0 91.4-16.5 126.6-46.8l133.9 133.9c2.9 2.9 6.8 4.4 10.6 4.4s7.7-1.5 10.6-4.4c5.9-5.9 5.9-15.4 0-21.2zm-281.7-95.9c-44 0-85.3-17.1-116.4-48.2-64.2-64.2-64.2-168.6 0-232.8 32.1-32.1 74.2-48.1 116.4-48.1s84.3 16 116.4 48.1c31.1 31.1 48.2 72.4 48.2 116.4s-17.1 85.3-48.2 116.4-72.4 48.2-116.4 48.2z"></path>
           </svg>
-          <input
-            onFocus={onSearchInputFocus}
-            onBlur={onSearchInputFocus}
-            className={classes.search_input}
-            type="search"
-            placeholder="Search Expenses"
-          ></input>
+          <Tooltip title="Search your features" open={showToolTip} arrow={true}>
+            <input
+              onFocus={onSearchInputFocus}
+              onBlur={onSearchInputFocus}
+              onMouseEnter={() => {
+                isSearchIconFocused
+                  ? setShowToolTip(false)
+                  : setShowToolTip(true);
+              }}
+              onMouseLeave={() => setShowToolTip(false)}
+              className={classes.search_input}
+              type="search"
+              placeholder="Search Expenses"
+            ></input>
+          </Tooltip>
         </div>
         <ol className={classes.ol} id={classes.olid}>
           <li style={{ paddingRight: "20px" }}>
@@ -183,18 +212,34 @@ export default function Navbar({ tabPath }) {
             </a>
           </li>
           <li className={classes.navIconList}>
-            <a href="#">
-              <i id={classes.plusIcon} className="fas fa-plus"></i>
-            </a>
-            <a href="#">
-              <i id={classes.iTag} className="fas fa-cog"></i>
-            </a>
-            <a href="#">
-              <i className="far fa-bell" id={classes.iTag}></i>
-            </a>
-            <a href="#">
-              <i className="fas fa-user-friends" id={classes.iTag}></i>
-            </a>
+            <Link href="#">
+              <BootstrapTooltip title="Quick Add">
+                <a>
+                  <i id={classes.plusIcon} className="fas fa-plus"></i>
+                </a>
+              </BootstrapTooltip>
+            </Link>
+            <Link href="/my_settings">
+              <BootstrapTooltip title="My Settings">
+                <a href="#">
+                  <i id={classes.iTag} className="fas fa-cog"></i>
+                </a>
+              </BootstrapTooltip>
+            </Link>
+            <Link href="#">
+              <BootstrapTooltip title="Notifications">
+                <a>
+                  <i className="far fa-bell" id={classes.iTag}></i>
+                </a>
+              </BootstrapTooltip>
+            </Link>
+            <Link href="#">
+              <BootstrapTooltip title="Refer and Earn">
+                <a>
+                  <i className="fas fa-user-friends" id={classes.iTag}></i>
+                </a>
+              </BootstrapTooltip>
+            </Link>
           </li>
           <li>
             <a href="#">
@@ -318,7 +363,7 @@ export default function Navbar({ tabPath }) {
                   <path d="M380.8 16.2H131.2c-41 0-74.3 33.3-74.3 74.3v384.7c0 7.8 4.3 14.8 11.3 18.3 7.1 3.6 15.5 2.9 21.9-1.7l54.1-39.4c11.8-8.6 27.6-8.6 39.4 0l46.9 34.2c15.2 11.1 35.6 11.1 50.9 0l46.9-34.2c11.8-8.6 27.6-8.6 39.4 0l54.1 39.4c3.7 2.7 8 4 12.4 4 3.3 0 6.5-.8 9.6-2.3 7-3.5 11.3-10.6 11.3-18.3V90.5c0-41-33.4-74.3-74.3-74.3zm44.3 436.9c0 1.6-1.9 2.6-3.2 1.6l-36.5-26.6a63.169 63.169 0 0 0-74.7 0l-46.9 34.2c-4.6 3.4-10.9 3.4-15.5 0l-46.9-34.2c-11.2-8.1-24.3-12.2-37.4-12.2-13.1 0-26.2 4.1-37.4 12.2l-36.5 26.6c-1.3 1-3.2 0-3.2-1.6V90.5c0-24.4 19.8-44.3 44.3-44.3h249.6c24.4 0 44.3 19.8 44.3 44.3v362.6z"></path>
                   <path d="M332.7 167.9H188c-8.3 0-15 6.7-15 15s6.7 15 15 15h144.7c8.3 0 15-6.7 15-15s-6.7-15-15-15zM307.2 258.4H204.8c-8.3 0-15 6.7-15 15s6.7 15 15 15h102.3c8.3 0 15-6.7 15-15s-6.7-15-14.9-15z"></path>
                 </svg> */}
-                <i class="fas fa-bookmark"></i>
+                <i className="fas fa-bookmark"></i>
                 <a className={classes.a}>Expenses</a>
               </li>
             </Link>
@@ -337,14 +382,13 @@ export default function Navbar({ tabPath }) {
             <Link href="/cardsmain/cardsmain">
               <li
                 className={
-                  tabPath.includes([
-                    "/cardsmain/cardsmain" || "/cardsmain/newcard",
-                  ])
+                  tabPath === "/cardsmain/cardsmain" ||
+                  tabPath === "/cardsmain/newcard"
                     ? classes["navTabLiFocused"]
                     : classes["navTabLi"]
                 }
               >
-                <i class="far fa-credit-card"></i>{" "}
+                <i className="far fa-credit-card"></i>{" "}
                 <a className={classes.a}>Cards</a>
               </li>
             </Link>

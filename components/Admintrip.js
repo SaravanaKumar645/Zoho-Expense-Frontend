@@ -174,7 +174,7 @@ export default function AdminTrip() {
                 Approve
               </button>
             ),
-            tooltip: "Notes",
+            tooltip: "Approve",
             onClick: (e, data) => {
               // console.log(data._id)
               // localStorage.setItem("id", JSON.stringify(data._id));

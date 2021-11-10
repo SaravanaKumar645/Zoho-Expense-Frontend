@@ -98,6 +98,7 @@
 .nav .icon {
   display: flex;
   gap: 1ch;
+  cursor: pointer;
   width: 194px;
   align-items: center;
   border-right: 1px solid #878ba25b;
