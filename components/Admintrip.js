@@ -1,5 +1,5 @@
 import classes from "./Admintrip.module.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NewTrips from "./Trips";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,16 +34,17 @@ export const IdPass = (data) => {
 export default function AdminTrip() {
   const [maindata, setMaindata] = useState("");
   const [open, setOpen] = useState(false);
-
-  const [datas, setdatas] = useState([]);
+  const [datas, setDatas] = useState([{}]);
   const { user } = isAutheticated();
-  useEffect(() => {
+
+  useEffect(async () => {
     getOrg(user.org_name)
       .then((data) => {
         console.log(data);
-        setdatas(data);
+        setDatas(data);
       })
-      .catch((err) => console.log("Get Admin Trpis request failed" + err));
+      .catch(console.log("Get Trpis request failed"));
+    return () => setDatas([]);
   }, []);
 
   const handleClickOpen = (e) => {
@@ -57,11 +58,8 @@ export default function AdminTrip() {
 
   const Columns = [
     { title: "Trip Id", field: "_id" },
-
     { title: "Departure Date", field: "depart_date" },
     { title: "Arrive At", field: "arrive_at" },
-
-    // { title: "Approver", field: "approver" },
     { title: "Email", field: "email" },
     { title: "Status", field: "status" },
   ];
@@ -119,7 +117,7 @@ export default function AdminTrip() {
         title={` ${user.org_name} Trips`}
         columns={Columns.map((e) => e)}
         data={
-          datas &&
+          datas.length > 0 &&
           datas.map((e) => {
             return {
               ...e,

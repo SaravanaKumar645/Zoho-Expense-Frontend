@@ -2,18 +2,15 @@ import { FaExclamationCircle } from "react-icons/fa";
 import { signin, authenticate, isAutheticated } from "../auth/Auth";
 
 export const trips = async (trip, token) => {
-  return await fetch(
-    "https://zoho-expense-server.herokuapp.com/api/createtrip",
-    {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `bearer ${token}`,
-      },
-      body: JSON.stringify(trip),
-    }
-  )
+  return fetch("https://zoho-expense-server.herokuapp.com/api/createtrip", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `bearer ${token}`,
+    },
+    body: JSON.stringify(trip),
+  })
     .then((response) => {
       return response.json();
     })
@@ -44,8 +41,8 @@ export const getTrip = (email) => {
 export const getOrg = async (org_name) => {
   const { token } = await isAutheticated();
   // let email = user.email;
-  console.log(token);
-  return await fetch(
+  console.log("Inside getorg : " + token);
+  return fetch(
     `https://zoho-expense-server.herokuapp.com/api/alltrips/${org_name}`,
     {
       method: "GET",
@@ -56,17 +53,20 @@ export const getOrg = async (org_name) => {
     }
   )
     .then((response) => {
-      console.log(response.email);
+      console.log("Inside getorg : " + JSON.stringify(response));
       return response.json();
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(err);
+      return null;
+    });
 };
 
 export const deleteTrip = async (_id) => {
   const { token } = isAutheticated();
   // let email = user.email;
   console.log(token);
-  return await fetch(
+  return fetch(
     `https://zoho-expense-server.herokuapp.com/api/deletetrips/${_id}`,
     {
       method: "DELETE",
@@ -87,7 +87,7 @@ export const getId = async (id) => {
   const { token } = isAutheticated();
   // let email = user.email;
   console.log(token);
-  return await fetch(`https://zoho-expense-server.herokuapp.com/api/${id}`, {
+  return fetch(`https://zoho-expense-server.herokuapp.com/api/${id}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -121,18 +121,15 @@ export const getId = async (id) => {
 
 export const expenses = async (expense) => {
   const { token } = isAutheticated();
-  return await fetch(
-    "https://zoho-expense-server.herokuapp.com/api/createexpense",
-    {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `bearer ${token}`,
-      },
-      body: JSON.stringify(expense),
-    }
-  )
+  return fetch("https://zoho-expense-server.herokuapp.com/api/createexpense", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `bearer ${token}`,
+    },
+    body: JSON.stringify(expense),
+  })
     .then((response) => {
       return response.json();
     })

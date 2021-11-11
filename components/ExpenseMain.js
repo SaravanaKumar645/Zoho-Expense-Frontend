@@ -23,7 +23,7 @@ export default function ExpenseMain() {
 
   const { user } = isAutheticated();
 
-  const [datas, setdatas] = useState([]);
+  const [datas, setdatas] = useState([{}]);
 
   console.log(user.email);
 

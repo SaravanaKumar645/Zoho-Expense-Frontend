@@ -32,7 +32,7 @@ export default function TripMain() {
   const router = useRouter();
   const [maindata, setMaindata] = useState("");
   const [open, setOpen] = useState(false);
-  const [datas, setdatas] = useState([]);
+  const [datas, setdatas] = useState([{}]);
   const { user } = isAutheticated();
   useEffect(() => {
     getTrip(user.email)
@@ -40,7 +40,6 @@ export default function TripMain() {
         console.log(data);
         setdatas(data);
       })
-
       .catch(console.log("Get Trpis request failed"));
   }, []);
 
@@ -115,7 +114,7 @@ export default function TripMain() {
         title={"Trips List"}
         columns={Columns.map((e) => e)}
         data={
-          datas &&
+          datas.length > 0 &&
           datas.map((e) => {
             return {
               ...e,
